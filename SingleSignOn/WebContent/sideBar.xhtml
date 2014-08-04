@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Menu</title>
+    </h:head>
+    <body>
+        <ui:composition>  
+            
+         <h:form>                      
+                  <h:commandLink value="login"  action="login" rendered="#{!control.isLoggedIn}"><br />
+                      <f:param name="url" value="loggedIn" />
+                  </h:commandLink>
+                  
+                    <h:commandLink value="log out"  action="#{control.logout}" rendered="#{control.isLoggedIn}" /><br />
+                      
+                   <h:commandLink  value="public" action="public"/> <br />
+                   
+            
+                   <h:commandLink  value="private area 1" action="#{control.checkLogin()}">
+                        <f:param name="url" value="private1" /> 
+                   </h:commandLink><br/>
+                   
+                   <h:commandLink  value="private area 2" action="#{control.checkLogin()}">
+                        <f:param name="url" value="private2" /> 
+                   </h:commandLink>
+                   
+ 
+                   
+             
+         </h:form>	    
+      </ui:composition> 
+    </body>
+</html>
+

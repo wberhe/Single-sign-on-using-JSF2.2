@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <head><title>IGNORED</title></head>
+   <body>
+      <ui:composition template="/template.xhtml">
+         
+        <ui:define name="sidebar">
+           <ui:include src="/sideBar.xhtml"/>
+        </ui:define>
+      
+
+         <ui:define name="content">
+            <h:form>
+               <h:panelGrid columns="2">
+                  Name:
+                  <h:inputText id="name" value="#{control.username}"/>
+                  Password:
+                  <h:inputSecret id="password" value="#{control.password}"/>
+               </h:panelGrid>
+               <p>
+                  <h:commandButton value="Submit"
+                                   action="#{control.doLogin}">
+                        <f:param name="url" value="loggedIn" />
+                  </h:commandButton>
+               </p>
+            </h:form>
+         </ui:define>
+      </ui:composition>
+   </body>
+</html>
